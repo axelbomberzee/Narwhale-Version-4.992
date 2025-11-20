@@ -1,0 +1,223 @@
+div {
+    -webkit-user-select: none; /* webkit (safari, chrome) browsers */
+    -moz-user-select: none; /* mozilla browsers */
+    -khtml-user-select: none; /* webkit (konqueror) browsers */
+    -ms-user-select: none; /* IE10+ */
+}
+
+#status {
+    position: absolute;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.4);
+    color: #FFF;
+    font-size: 16.1px;
+    top: 10px;
+    right: 10px;
+    font-weight: bold;
+    text-align: center;
+    display: none;
+}
+
+.flipper {
+  animation: pulse 1s ease;
+  transform-origin: top center; 
+  /* transition: transform 0.2s; */
+}
+
+@keyframes pulse {
+  0% { transform:  rotate3d(1,1,0,0deg);  }
+  50% { transform: rotate3d(1,0,1,180deg); }
+  100% { transform:rotate3d(0,1,1,360deg); }
+}
+
+#status .title {
+    font-size: 25px;
+}
+
+#status .me {
+    color: #FF8888;
+    font-size: 16.1px;
+}
+
+#leaderboxtitle {
+    display: block;
+    margin: 0px;
+    font-weight: bold;
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+
+#teambox {
+    width: 100%;
+}
+
+.teaminfo {
+    text-shadow: #333333 0.05em 0.05em 0.05em ;
+    display: inline-block;
+    width:33%;
+    font-weight: bold;
+    font-size: 50px;
+}
+
+#leftscore {
+    background-color: #FF7b16;
+    color: white;
+    /*background-color: #555555;*/
+    border-radius: 5px 5px 5px 5px; 
+}
+
+#rightscore {
+    background-color: #69AFFF;
+    color: white;
+    /*background-color: #555555;*/
+    border-radius: 5px 5px 5px 5px; 
+}
+
+.grayLink a {
+    color: gray;
+}
+
+.grayLink a:link {
+    text-decoration: none;
+}
+
+.grayLink a:hover {
+    text-decoration: underline;
+}
+
+#controlBox {
+    z-index: 1000;
+    position: fixed;
+    background-color:rgba(255, 255, 255, 0.5);
+    opacity: 1.0;
+    top: 0px;
+    left: -125px;
+    padding: 3px 6px 3px 6px;
+    border-radius: 0px 0px 5px 0px;
+    -moz-border-radius: 0px 0px 5px 0px;
+    -webkit-border-radius: 0px 0px 5px 0px;
+    -webkit-transition: left ease 0.3s;
+    transition: left ease 0.3s;    
+    display: none;
+    -webkit-tap-highlight-color: transparent;
+    -moz-tap-highlight-color: transparent;    
+}
+
+#controlBox:active, #controlBox:hover, #controlBox:focus {
+    left: 0px;
+}
+
+#controlBox a {
+    font-size: 23px;
+    letter-spacing: 0px;
+}
+
+#shareBox{
+    right: 15px;   
+    bottom: 20px;
+    position:fixed;   
+    -webkit-transition: right ease 0.3s;
+    transition: right ease 0.3s;
+    z-index: 1100;
+    text-align: right;
+    display: none;
+	transform-origin: bottom right;
+}
+
+@media (max-height: 600px) { #shareBox { transform:scale(0.8) } }
+@media (max-width: 600px) { #shareBox { transform:scale(0.8) } }
+@media (max-height: 450px) { #shareBox { transform:scale(0.7) } }
+@media (max-width: 450px) { #shareBox { transform:scale(0.7) } }
+@media (max-height: 320px) { #shareBox { transform:scale(0.6) } }
+@media (max-width: 320px) { #shareBox { transform:scale(0.6) } }
+
+#shareBox i {
+    -webkit-transition: all ease .15s;
+   transition: all ease .15s;
+    cursor:pointer;
+}
+
+#shareBox i:hover {
+    -webkit-transform: scale(1.1);
+        -ms-transform: scale(1.1);
+            transform: scale(1.1);
+}
+
+#shareBox a {
+    font-size: 20px;  
+}
+
+.vertical-text {
+	transform: rotate(-90deg);
+	transform-origin: bottom right;
+}
+
+
+#leaderbox {
+    text-align: center;
+    position: absolute; 
+    width: 190px;
+    background: rgba(255,255,255,0.3);
+    opacity: 0.3;
+    top: 10px;
+    right: 10px;
+    border-radius: 10px;
+    padding: 10px;
+    pointer-events: none;
+    display: none;
+}
+
+@media (max-height: 450px) { #leaderbox { opacity: 0.15; }}
+@media (max-width: 450px) { #leaderbox { opacity: 0.15; right: 0px; }}
+#champrec {
+    float: left;
+    text-align: right;
+    width: 15%;
+}
+
+#levelrec {
+    float: left;
+    width: 20%;
+}
+
+#namerec {
+    float: left;
+    width: 55%; 
+    padding-left: 5%;
+    text-align: left;
+    overflow-x: hidden;
+    white-space: nowrap;
+    display: inline-block;
+}
+
+#infobox {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    border-radius: 10px;
+    pointer-events: none;
+    display: none;
+}
+
+#lvtext {
+    font-size: 50px;
+}
+
+#lvnum {
+    font-size: 100px;
+    margin-bottom: -10px;
+}
+
+#lvtext, #lvnum {
+    opacity: 0.3;
+    align-self: flex-end;
+}
+
+@media (max-height: 320px) { 
+    #lvtext, #lvnum { opacity: 0.1 }
+    #infobox {bottom: -10px} 
+}
+@media (max-width: 320px) { 
+    #lvtext, #lvnum { opacity: 0.1 }
+    #infobox {bottom: -10px} 
+}
