@@ -11,3 +11,4 @@ The system is divided into two main parts:
 ---
 
 ## 📌 Project Structure
+Create a folder called "Game Narwhale", and put all these files inside that folder, so you can host the server.js website in Visual Studio.
